@@ -30,7 +30,7 @@ afterEvaluate {
                 url = uri("https://maven.pkg.github.com/mobinators/custom-design")
                 credentials {
                     username = "mobinators"
-                    password = project.properties['github_access_token'] ?: ""
+                    password = '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'
 
                     /* username = project.findProperty("ext.user") ?: System.getenv("mobinators")
                      password = project.findProperty("ext.key") ?: System.getenv("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")*/
