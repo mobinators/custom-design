@@ -1,6 +1,43 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
+}
+apply from: rootProject.file("github.properties")
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                // Replace with your own group ID.
+                groupId 'com.appytune.customdesing'
+                // Replace with the name of your library
+                artifactId 'custom-design'
+                version '0.0.1'
+            }
+            debug(MavenPublication) {
+                from components.debug
+                // Replace with your own group ID.
+                groupId 'com.appytune.customdesing'
+                // Replace with the name of your library
+                artifactId 'custom-design'
+                version '0.0.1'
+            }
+        }
+        repositories {
+            maven {
+                name = "custom-design"
+                url = uri("https://maven.pkg.github.com/mobinators/custom-design")
+                credentials {
+                    username = "mobinators"
+                    password = "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"
+
+                    /* username = project.findProperty("ext.user") ?: System.getenv("mobinators")
+                     password = project.findProperty("ext.key") ?: System.getenv("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")*/
+                }
+            }
+        }
+    }
 }
 
 android {
