@@ -21,7 +21,7 @@ allprojects {
 //        }
         maven {
 //            url "https://maven.google.com"
-            url 'https://github.com/mobinators/custom-design'
+            url 'https://maven.pkg.github.com/mobinators/custom-design'
             authentication {
                 basic(BasicAuthentication)
             }
